@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Category Pie Chart -->
+     <canvas id="categoryChart" width="100" height="100"></canvas>
+
+</head>
+<body>
+
+<div class="app">
+    <h1>💰 Expense Tracker</h1>
+
+    <!-- Summary -->
+    <div class="summary">
+        <div>
+            <p>Total Expense</p>
+            <h2 id="totalAmount">₹0</h2>
+        </div>
+        <div>
+            <p>Total Items</p>
+            <h2 id="totalItems">0</h2>
+        </div>
+    </div>
+
+    <!-- Input -->
+    <div class="input-box">
+        <input type="text" id="title" placeholder="Expense title">
+        <input type="number" id="amount" placeholder="Amount">
+        <select id="category">
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Shopping</option>
+            <option>Other</option>
+        </select>
+        <button onclick="addExpense()">Add</button>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button onclick="sortExpenses()">Sort by Amount</button>
+        <button onclick="undoDelete()">Undo Delete</button>
+        <button onclick="processScheduled()">Process Scheduled</button>
+    </div>
+
+    <!-- Category Summary -->
+    <div class="category-summary" id="categorySummary"></div>
+
+    <!-- Expense List -->
+    <ul id="expenseList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
